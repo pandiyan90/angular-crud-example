@@ -13,14 +13,22 @@ import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './services/user.service';
+import { AddComponent } from './dialogs/add/add.component';
+import { EditComponent } from './dialogs/edit/edit.component';
+import { DeleteComponent } from './dialogs/delete/delete.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddComponent,
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatDialogModule,
     MatIconModule,
@@ -32,7 +40,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
